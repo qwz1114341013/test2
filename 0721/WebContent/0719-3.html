@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<link href="css/0719-3.css" rel="stylesheet" />
+
+
+<script type="text/javascript">
+function validate(){
+  // var a=document.getElementById('name');
+  // if(a.value==null||a.value==""){
+  //   alert("请输入用户名");
+  //   return false;
+  // }
+  // var b=document.getElementById('tel');
+  // if(b.value==null||b.value==""){
+  //   alert("请输入手机号");
+  //   return false;
+  // }
+  // var c=document.getElementById('pwd');
+  // if(c.value==null||c.value==""){
+  //   alert("请输入密码");
+  //   return false;
+  // }
+
+  var s=function(){
+    alert("这是个方法");
+  }();//立即运行这个方法
+
+  var form =document.getElementById("f");
+  for(var i=0;i<form.elements.length;i++){
+    if(form.elements[i].type=="text"){
+      if(form.elements[i].value==''){
+        alert("您的信息没有填写完成");
+        return false;
+      }
+    }else if(form.elements[i].type=="checkbox"){
+      if(form.elements[i].checked==false){
+        alert("你的勾没打");
+        return false;
+      }
+    }else if(form.elements[i].type=="radio"){
+      if(form.elements[i].value==1&&form.elements[i].checked==false){
+        alert("少一点套路");
+        return false;
+      }
+    }else if(form.elements[i].tagName=="SELECT"){
+      if(form.elements[i].value==""){
+        alert("下拉框没选");
+        return false;
+      }
+    }
+  }
+}
+</script>
+<body>
+<div style="float:left;width:30%;height:100%">
+  <form id="f" action="要提交到哪里" method="提交方式" onsubmit="return validate()" >
+  用户名：<input id="name" class="username" /><br>
+  手机号：<input id="tel" /><br>
+  密码：<input id="pwd" /><br>
+
+  合同看了没有？<input type="checkbox" value="" /><br />
+  合同看了没有？<input type="checkbox" value="" /><br />
+  合同看了没有？<input type="checkbox" value="" /><br />
+  合同看了没有？<input type="checkbox" value="" /><br />
+  合同看了没有？<input type="checkbox" value="" /><br />
+  合同看了没有？<input type="checkbox" value="" /><br />
+
+  真的看完了吗？ 真的<input type="radio" name="zhen" value="1"  />  假的<input type="radio" name="zhen" value="0"/><br />
+  真的看完了吗？ 真的<input type="radio" name="zhen1" value="1"  />  假的<input type="radio" name="zhen1" value="0"/><br />
+  真的看完了吗？ 真的<input type="radio" name="zhen2" value="1"  />  假的<input type="radio" name="zhen2" value="0"/><br />
+
+  性别：<select>
+    <option value="">请选择</option>
+    <option value="1">男</option>
+    <option value="2">女</option>
+  </select><br>
+  性别：<select>
+    <option value="">请选择</option>
+    <option value="1">男</option>
+    <option value="2">女</option>
+  </select><br>
+  性别：<select>
+    <option value="">请选择</option>
+    <option value="1">男</option>
+    <option value="2">女</option>
+  </select><br>
+  性别：<select>
+    <option value="">请选择</option>
+    <option value="1">男</option>
+    <option value="2">女</option>
+  </select><br>
+  性别：<select>
+    <option value="">请选择</option>
+    <option value="1">男</option>
+    <option value="2">女</option>
+  </select><br>
+  <textarea ></textarea>
+
+  <input type="submit" value="注册"/>
+  </form>
+</div>
+<!-- <div style="float:right;width:70%;height:100%">
+<iframe src="http://www.baidu.com" style="width:1024px;height:768px"></iframe>
+</div> -->
+
+
+</body>
+</html>
